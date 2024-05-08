@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MaciLaciMaui.SettingsPage" Title="Beállítások">
+
+	<Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Button Text="Könnyű pálya" Command="{Binding Level1}" Grid.Row="0" />
+        <Button Text="Közepes pálya" Command="{Binding Level2}" Grid.Row="1" />
+        <Button Text="Nehéz pálya" Command="{Binding Level3}" Grid.Row="2" />
+    </Grid>
+
+</ContentPage>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MaciLaciMaui.MainPage" Title="MaciLaci">
+
+    <Grid>
+        <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <HorizontalStackLayout Grid.Row="0">
+            <Button Text="Szünet" Command="{Binding Pause}"  />
+            <Button Text="Beállítások" Command="{Binding Settings}"/>
+        </HorizontalStackLayout>
+        <Grid Grid.Row="1" BindableLayout.ItemsSource="{Binding Fields}" RowDefinitions="{Binding RowDefinicion}"  ColumnDefinitions="{Binding ColumnDefinicion}" >
+            <BindableLayout.ItemTemplate>
+                <DataTemplate>
+                    <Button Grid.Row="{Binding X}" Grid.Column="{Binding Y}" BackgroundColor="{Binding Color}" Command="{Binding Touch}" CommandParameter="{Binding}"/>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </Grid>
+        <HorizontalStackLayout Grid.Row="2">
+            <Label Text="Eltelt idő: " Margin="10"/>
+            <Label Text="{Binding Time}" Margin="10"/>
+            <Label Text="Összegyűjtött kosarak: " Margin="10"/>
+            <Label Text="{Binding Collected}" Margin="10"/>
+        </HorizontalStackLayout>
+    </Grid>
+
+</ContentPage>
